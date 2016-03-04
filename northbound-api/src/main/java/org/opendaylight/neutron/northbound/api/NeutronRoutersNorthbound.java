@@ -316,7 +316,6 @@ public class NeutronRoutersNorthbound
             }
         }
 
-        target.addInterface(input.getPortUUID(), input);
         if (instances != null) {
             for (Object instance : instances) {
                 INeutronRouterAware service = (INeutronRouterAware) instance;
@@ -368,7 +367,6 @@ public class NeutronRoutersNorthbound
         if (status != HTTP_OK_BOTTOM) {
             return Response.status(status).build();
         }
-        target.removeInterface(input.getPortUUID());
         if (instances != null) {
             for (Object instance : instances) {
                 INeutronRouterAware service = (INeutronRouterAware) instance;
